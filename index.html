@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>XML2Contacts</title>
+		<meta charset="UTF-8">
+		<link href="css/headers.css" rel="stylesheet" type="text/css">
+		<link href="css/buttons.css" rel="stylesheet" type="text/css">
+		<link href="css/xml2contacts.css" rel="stylesheet" type="text/css">
+		<script src="js/xml2contacts.js"></script>
+	</head>
+	<body>
+		<section role="region">
+		  <header class="fixed">
+		    <h1>XML2Contacts</h1>
+		  </header>
+		</section>
+		<article style="padding:10px;text-align:justify">
+			<p>Version 0.4 - with JPG photo import</p>
+			<p>N.B:</p>
+			<div>
+				<p>This webapp restores your contacts using previous backups generated with Contacts2XML webapp. It has been tested with hundreds of contacts, but is still under development.</p>
+				<p style="font-weight:bold">Don't forget to unplug any USB wire before restoring a backup or you won't be able to read from the sd-card&nbsp;!</p>
+				<p>Please note that no comparisons are made between new contacts and existing ones, which means you can add same contacts several times&nbsp;!</p>
+			</div>
+			<div style="text-align:center;margin:20px 0" id="chooser">
+				<p>Choose a previously backup file:</p>
+				<select id="sel1">
+				</select>
+				<p style="margin-top:40px"><button id="but1">Restore contacts from sd-card</button></p>
+			</div>
+			<div id="log"></div>
+			<p id="counter"></p>
+			<div style="text-align:center;margin:40px 0" id="cleaner">
+				<p>I let the following button for testing purposes, but be very careful when you use it&nbsp;: it really clears ALL your existing contacts definitely&nbsp;!</p>
+				<p><button class="danger" id="but2">Clear all contacts (dangerous !)</button></p>
+			</div>	
+		</article>
+	</body>
+</html>
