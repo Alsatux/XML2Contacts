@@ -1,11 +1,106 @@
+/* thx to http://www.colorzilla.com/gradient-editor/ */
+
 html, body {
+	position:relative;
 	margin: 0;
 	padding: 0;
 	font-family: Sans-serif;
-	font-size: 10px;
+	font-size: 12px;
+	text-align:center;
+	color:black;
+	background: linear-gradient(90deg, #cde232 0%,#dbf043 100%); /* W3C */
+	z-index:1;
+}
+
+#bg {
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	height:410px;	
+	background: linear-gradient(155deg, #e6f0a3 0%,#d2e638 50%,#c3d825 51%,#dbf043 100%); /* W3C */
+	z-index:2;
+}
+
+header, article {
+	position:relative;
+	z-index:3;
+	overflow:hidden;
+}
+
+h1 {
+	margin: 0;
+	padding-top:10px;
+}
+
+a:link, a:active, a:visited, a:hover {
+	color:darkorange; 
+	text-decoration:none;
+	font-weight:bold;
+}
+
+ul {
+	margin:0 10px;
+	padding-left:15px;
+}
+
+li {
+	padding-top:10px;
+	text-align:justify;
+}
+
+td {
+	padding:5px 0;	
+}
+
+table {
+	margin:0 auto;
+}
+
+p {
+	margin:10px 10px;
+	padding:5px 0;
+}
+
+button {
+	margin:5px auto 0;
+	width:200px;
+	font-size:16px;
 }
 
 #sel1 {
-	font-size:14px;
-	padding:10px;
+	padding:8px 10px;
+	font-size:16px;
 }
+
+img.icon {
+	vertical-align:middle;
+	padding:5px 10px 5px 0
+}
+
+p.news {
+	font-weight:none;
+	margin:0;
+	padding:0 0 10px;
+}
+
+p.warn {
+	background:black;
+	color:white;
+	border:1px solid black;
+	border-radius:5px;
+	font-weight:bold;
+	text-align:center;
+}
+
+p.error {
+	font-weight:bold;
+}
+
+#log, #count, #result, #cleaner {
+	word-wrap: break-word;
+}
+
+
+
+

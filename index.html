@@ -3,37 +3,84 @@
 	<head>
 		<title>XML2Contacts</title>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no">
 		<link href="css/headers.css" rel="stylesheet" type="text/css">
-		<link href="css/buttons.css" rel="stylesheet" type="text/css">
+		<link href="css/switches.css" rel="stylesheet" type="text/css">
 		<link href="css/xml2contacts.css" rel="stylesheet" type="text/css">
 		<script src="js/xml2contacts.js"></script>
 	</head>
 	<body>
-		<section role="region">
-		  <header class="fixed">
-		    <h1>XML2Contacts</h1>
-		  </header>
-		</section>
-		<article style="padding:10px;text-align:justify">
-			<p>Version 0.4 - with JPG photo import</p>
-			<p>N.B:</p>
-			<div>
-				<p>This webapp restores your contacts using previous backups generated with Contacts2XML webapp. It has been tested with hundreds of contacts, but is still under development.</p>
-				<p style="font-weight:bold">Don't forget to unplug any USB wire before restoring a backup or you won't be able to read from the sd-card&nbsp;!</p>
-				<p>Please note that no comparisons are made between new contacts and existing ones, which means you can add same contacts several times&nbsp;!</p>
+		<div id="bg"></div>
+		<header>
+			<h1>XML2Contacts - v. 0.6</h1>
+			<p class="news">Add photo management with Cockatoo.</p>
+		</header>
+		<article>
+			<div id="part1">
+				<div>
+					<p class="warn">Don't forget to unplug USB&nbsp;!</p>
+				</div>
+				<div id="actions">
+					<div id="chooser">
+						<p>Available backups:</p>
+						<select id="sel1">
+						</select>
+					</div>
+					<table>
+						<tbody>
+							<tr>
+								<td>
+									<label class="pack-switch">
+										<input id="cb1" type="checkbox" checked="checked"/>
+										<span></span>
+									</label>
+								</td>
+								<td style="padding-left:10px"> 
+									Import photos from the XML file <br/>
+									(using data-uri and base64) ?
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="pack-switch">
+										<input id="cb2" type="checkbox"/>
+										<span></span>
+									</label>
+								</td>
+								<td style="padding-left:10px"> 
+									Import photos from external<br/>
+									JPG files ?
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+						<button id="but1"><img class="icon" src="/restore.png" alt=""/>Restore contacts</button>
+					</p>
+				</div>
+				<div>
+					<p class="warn">N.B.:</p>
+				</div>
+				<div id="cleaner">					
+					<ul>
+						<li>No comparison is made between existing contacts and new ones. To avoid multiple records, you can clear the current database with the following button before restoring your datas, but remember <span style="font-weight:bold">it really clears ALL of your existing contacts definitely&nbsp;!</span></li>
+					</ul>
+					<p>
+						<button id="but2"><img class="icon" src="/danger.png" alt="Danger !"/>Clear all contacts !</button>
+					</p>
+					<ul>
+						<li>Backups should be placed in the directory <span style="font-weight:bold">sdcard</span>/contacts2xml/YYYYMMDDHHIISS.</li>
+						<li>External photos made with a version of <a href="http://alsatux.com/Contacts2XML">Contacts2XML</a>&lt;0.5 should be rename from "XXX.jpg" to "XXX.1.jpg".</li>
+						<li>You can use <a href="http://alsatux.com/Cockatoo">Cockatoo</a> to create and manage your contacts outside of Firefox OS. Since version 0.5, Cockatoo read/write contact photos using data-uri format.</li>
+						<li>Multiple photos are already supported by Firefox OS API, but current versions only show a single photo per contact.</li>
+					<ul>
+				</div>
 			</div>
-			<div style="text-align:center;margin:20px 0" id="chooser">
-				<p>Choose a previously backup file:</p>
-				<select id="sel1">
-				</select>
-				<p style="margin-top:40px"><button id="but1">Restore contacts from sd-card</button></p>
+			<div id="part2">
+				<div id="log"></div>
+				<p class="info" id="count"></p>
+				<p><button id="but3" style="display:none"><img class="icon" src="/back.png" alt="Beatles juice ?">Get back</button></p>
 			</div>
-			<div id="log"></div>
-			<p id="counter"></p>
-			<div style="text-align:center;margin:40px 0" id="cleaner">
-				<p>I let the following button for testing purposes, but be very careful when you use it&nbsp;: it really clears ALL your existing contacts definitely&nbsp;!</p>
-				<p><button class="danger" id="but2">Clear all contacts (dangerous !)</button></p>
-			</div>	
 		</article>
 	</body>
 </html>
